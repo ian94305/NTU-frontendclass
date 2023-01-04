@@ -1,0 +1,25 @@
+.section1{
+    width: 80%;
+    height: 30%;
+    /* border: solid black 2px; */
+    display: flex;
+    margin: auto;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.card{
+    width: 25%;
+    border:solid gray 3px;
+    border-radius: 30px;
+    padding: 30px;
+    align-items: center;
+}
+.photoframe{
+    width: 100%;
+    height: 30%;
+}
+.photoframe img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
