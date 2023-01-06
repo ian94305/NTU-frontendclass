@@ -18,30 +18,60 @@
         // }
         // console.log("end");
 
+
+            // =======================課間練習===========================
+
+
         // let x=prompt("金額","");
         // x=parseInt(x);
-        // if(x<=1){
+        // if(x<1){
         //     alert("清輸入正確金額");
         // }else if(x>=10000){
         //     alert("金額過大");
         // }else{
-        //     console.log("提領中")
+        //     console.log("提領中");
         // }
-        // console.log("完成")
+        // console.log("完成");
         
 
-        for(let x=prompt("金額","");x=parseInt(x);){
 
-        if(x<=1){
-            alert("清輸入正確金額");
-        }else if(x>=10000){
-            alert("金額過大");
+            // ============================try for迴圈(不用看)=========================
+
+        // for(let x=prompt("金額","");x=parseInt(x);){
+
+        // if(x<1){
+        //     alert("清輸入正確金額");
+        // }else if(x>=10000){
+        //     alert("金額過大");
+        // }else{
+        //     console.log("提領中");
+        // }
+        // console.log("完成");
+        // break;
+        // }
+
+
+
+
+        let x=prompt("first number","");
+        let y=prompt("second number","");
+        const intx = parseInt(x);
+        const inty = parseInt(y);
+        let op=prompt("+-*/","");
+        if(op=="+"){
+            console.log(intx+inty);
+        }else if(op=="-"){
+            console.log(intx-inty);
+        }else if(op=="*"){
+            console.log(intx*inty);
+        }else if(op=="/"){
+            console.log(intx/inty);
         }else{
-            console.log("提領中")
+            console.log("無法辨識");
         }
-        console.log("完成")
-        break;
-        }
+
+
+
 
     </script>
 </body>
