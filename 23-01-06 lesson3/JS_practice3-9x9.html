@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            margin: 0 auto;
+            display: flex;
+            width: 800px;
+        }
+        div{
+            font-family: "微軟正黑體";
+            font-weight: bold;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+            width: 33.33%;
+            border: 1px solid rgb(0, 0, 0);
+            padding: 20px;
+        }
+        p{
+            margin: 8px 0;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+    </div>
+<script>
+    const b1 = document.querySelector('.box1');
+    b1.innerHTML = ``;
+    for(let i = 1 ; i <10 ; i++){
+        const divx = document.createElement('DIV');
+       
+        for(let j = 1 ; j<10 ; j++){
+            divx.innerHTML = divx.innerHTML+`<p>${i}x${j}=${i*j}</p>`
+        }
+        b1.appendChild(divx); 
+    }
+   
+</script>
+</body>
+</html>
