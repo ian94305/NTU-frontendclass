@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 函式:用來包裝一段程式碼
+        // 定義函式>呼叫函式
+            // function 函式名稱(){
+            //     函式內部程式碼
+            // }
+
+        // function greet(){
+        //     console.log("hello");
+        // }
+
+
+        // // 呼叫函式:函式名稱();
+        // greet();
+
+        //     // function 函式名稱(可加參數名稱列表){
+        //     //     函式內部程式碼
+        //     // }
+        // function number(a=5){
+        // console.log(a);
+        // }
+
+        // // 呼叫函式時定義參數值
+        // number();
+        // // 程式的有序性。原為a=5,在呼叫時給予10的值因此出來10
+        // // 相當於a=10，console.log(10);
+        // number(10);
+        
+
+
+            // ============將上一單元1累加至50設為函數，呼叫2次=============
+
+            function calculate(n,x){
+                let result=0;
+                while(n<=x){
+                    result=result+n;
+                    n+=1;
+
+                }
+                console.log(result);
+    
+            }
+
+            calculate(2,5);
+            calculate(-1,4);
+            calculate(1,10);
+
+
+
+        // ====================練習:將上一單元的蘋果計數設為函數並呼叫=================
+        // function basket(x){
+            // let n=1;
+            // let x=prompt("你有幾顆頻果","");
+        //     for(let a=1;a<=x;a++){
+
+        //         if(a==12*n){
+        //             console.log(n,"dozen apples");
+        //             n++;
+        //         }else if(a==1){
+        //             console.log(a,"apple");
+        //         }else{
+        //             console.log(a,"apples");
+        //         }
+        //     }
+        // }
+        // basket(x);
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
