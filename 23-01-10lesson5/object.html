@@ -67,7 +67,7 @@
 
 
 // =============建構函釋(constructor):專們用來包裝建立物件程序的函示============
-
+/*
       function createPointObject(x,y){
         // 自動產生新物的空白物件，使用this取得
             this.x=x;
@@ -82,7 +82,7 @@
         let p2=new createPointObject(4,2);
         console.log(p1);
         console.log(p2);
- 
+ */
 
 
     // =================課間練習=================
@@ -95,15 +95,25 @@
         呼叫物件talk的方法
         */
 
+/*        //方法1
+        let talk=new Object();
+        talk.name="小王";
+        talk.age="20";
+        talk.show=function(){
+            console.log(this.name,this.age);
+        };
+        console.log(talk);
+*/
 
-        // let talk=new Object();
-        // talk.name="小王";
-        // talk.age="20";
-        // talk.show=function(){
-        //     console.log(this.name,this.age);
-        // };
-        // console.log(talk);
-
+        function person(x,y){
+            this.x="小名";
+            this.y=20;
+            this.show=function(){
+                console.log(this.x,this.y);
+            };
+        let p1=new person();
+        console.log(p1);
+        }
     </script>
 </body>
 </html>
