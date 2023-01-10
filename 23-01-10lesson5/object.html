@@ -68,10 +68,10 @@
 
 // =============建構函釋(constructor):專們用來包裝建立物件程序的函示============
 
-      function createPointObject(xArg,yArg){
+      function createPointObject(x,y){
         // 自動產生新物的空白物件，使用this取得
-            this.x=xArg;
-            this.y=yArg;
+            this.x=x;
+            this.y=y;
             this.show=function(){
                 console.log(this.x,this.y);
             };
