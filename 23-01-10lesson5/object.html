@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   /*      // 資料:數字、字串、布林值、空值、函示、物件
+        // 物件:用來包裝其他資料的容器
+        // 建立物件>使用物件
+        // 建立物件
+        let test=new Object();
+        // 物件的屬性(attribute):物件的成員資料不是函示
+        test.x=3;
+        test.y=4;
+        // 物件的方法(method):物件得成員資料式函示
+        test.show=function(){
+            // this:代表物件本身(binding object):每個函式都有對應的綁定物件
+            console.log(this.x,this.y);
+        };
+        //使用物件
+        console.log(test);
+        console.log(test.x+test.y);
+        test.show();
+    */
+
+
+    /*
+        //=============建立物件的方法二:使用json=========
+
+        let test={"小名":20,"小王":27,
+            show:function(){
+            console.log(this.x,this.y);
+        }};
+
+        //使用物件
+        console.log(test);
+        console.log(test.x+test.y);
+        test.show();
+
+    */
+            // this:代表物件本身(binding object):每個函式都有對應的綁定物件
+                //1.物件的方法中使用this，代表物件本身
+                //2.全中的this代表 window物件  
+                
+        // ===========建立物件的方法三==================
+        // 使用一班的函示包裝建立物件
+    /*
+        function createPointObject(xArg,yArg){
+            let point=new Object();
+            point.x=xArg;
+            point.y=yArg;
+            point.show=function(){
+                console.log(this.x,this.y);
+            };
+            return point;
+        }
+        let p1=createPointObject(0,1);
+        let p2=createPointObject(4,2);
+        console.log(p1);
+        console.log(p2);
+    */
+                
+
+
+// =============建構函釋(constructor):專們用來包裝建立物件程序的函示============
+
+      function createPointObject(xArg,yArg){
+        // 自動產生新物的空白物件，使用this取得
+            this.x=xArg;
+            this.y=yArg;
+            this.show=function(){
+                console.log(this.x,this.y);
+            };
+            //return point; 會自動回傳this
+        }
+        //呼叫建構函示:new 建構函式得名稱(參數的資料列表)
+        let p1=new createPointObject(0,1);
+        let p2=new createPointObject(4,2);
+        console.log(p1);
+        console.log(p2);
+ 
+
+
+    // =================課間練習=================
+
+        /*請建立一個(人)得物件，包含以下成員
+            name:字串，表達姓名
+            age:數字，表達年齡
+            talk:函示，印出姓名和年齡
+
+        呼叫物件talk的方法
+        */
+
+
+        // let talk=new Object();
+        // talk.name="小王";
+        // talk.age="20";
+        // talk.show=function(){
+        //     console.log(this.name,this.age);
+        // };
+        // console.log(talk);
+
+    </script>
+</body>
+</html>

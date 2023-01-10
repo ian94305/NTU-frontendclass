@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+
+
+        // ============================return結束函式將資料回傳===============================
+
+        // function add(n1,n2){
+        //     console.log(n1+n2);
+        //     // return帶出回傳值
+        //     // (可嘗試將return反選取，下方reslut會變為空值)
+        //     return(n1+n2);
+        // }
+        // let result=add(3,4);
+        // console.log(result);
+
+        // let x=add(4,add());
+        // console.log(x);
+
+
+        // let add=function(n1,n2){
+        //     console.log(n1+n2);
+        // };
+        // add(3,4);
+        // console.log(add);
+        // // (可把下方反選打開，將函式等於其他值後，不再具有函式功能)
+        // // add=3;
+        // add(5,6);
+        // // 用另一個名稱等於此函示，一樣可以帶入函式功能
+        // let x=add;
+        // console.log(x);
+        // x(3,2);
+
+
+        // ============================funtion寫法三=======================
+        // let函式名稱=(參數名稱列表)=>{
+        //     函式內部程式碼
+        // }
+        
+
+
+            /* ================變數的使用範圍(scope)====================
+                1.注意變數宣告的位置
+                2.以變數宣告的位置為基準，對內部的程式區塊有效
+            */
+           let x;
+            if(true){
+                x=3;
+                console.log(x);
+            }
+            console.log(x);
+
+
+
+
+    </script>
+</body>
+</html>
