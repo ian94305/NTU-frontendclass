@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM</title>
+    <style>
+        .test{
+            color: blueviolet;
+            text-shadow: 20px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>今天天氣好</h3>
+    <div>你好大家好</div>
+    <div id="content">天氣不錯</div>
+    <button >顯示</button>
+    <button >隱藏</button>
+    <button onclick="change()">點我</button>  <!--在任一指令區塊後直接加上 onclick="" 來呼叫函式執行，但重新整理後還是會回到原本的畫面-->
+    <div onclick="image()">
+        <img src="3698.png_300.png" />
+    </div>
+    <script>
+        
+        
+        function image(){
+           
+        }
+        
+        function hide(){
+            display:block
+            
+        }
+        function show(){
+            
+        }console.log(window)
+        
+        //用函式將更改畫面的code包起來，以免整理畫面的時候直接執行
+        // 我想修改的地方是 window.document.body
+        // 我修改的方法是 innerHTML
+        // 我要放的值是 "天氣晴"
+        // 執行這個程式碼後，網頁畫面就會變成 "天氣晴"
+        
+       
+        function change(){
+            console.dir(window.document.body.innerHTML)//dir 是可以看未經排版比較詳細的代碼用
+            console.log(window.document.body.innerHTML)
+            window.document.body.innerHTML="天氣晴"//這段更改了原本<body>的內文，使用程式碼來控制畫面顯示的東西，同理同指令也可用在已上線的網路
+        }
+        
+        //HTML DOM ：就是瀏覽器內建的 window 物件
+        
+        console.log(window)
+        console.log(innerHeight,innerWidth)
+        console.log(screen.availHeight,screen.availWidth)
+        console.log(location)
+        //網址列上的位址="新的網址"
+        /*
+        if(){
+            location.href="www.google.com"
+        }
+*/
+        
+        function change(){
+            //在程式中取得想要改變的標籤物件 (HTML Element)
+            //let owen=window.document.all[8] // [8]是指他在 window.document.all標籤的第8個，但很不穩定通常設計不會這樣寫。
+            //使用 window.document.querySelector("CSS選擇器")取得想要的標籤物件
+            
+            let element=document.querySelector("#content")
+            
+            //針對標籤物件做修改
+            console.dir(element)
+            element.innerHTML="你好我好"
+            element.className="test"
+            //設定標籤的個別 CSS 屬性：標籤物件.sytle.CSS屬性="對應的設定值"
+            
+        }
+        
+        
+    </script>
+</body>
+</html>
