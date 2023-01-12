@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .butten{
+            color: aliceblue;
+            background-color: black;
+            height: 100px;
+            width: 100px;
+            border: 2px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .butten:hover{
+            color: black;
+            background-color: gray;
+            font-weight: bold;
+        }
+        br{
+            padding: 100px;
+            margin: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>基本的事件處理</h3>
+    <div>
+    <span
+        onclick="console.log('點擊');"
+        ondblclick="console.log('雙擊');"
+        onmousedown="console.log('滑鼠按下');"
+        onmouseup="console.log('滑鼠離開');"
+        onmouseover="console.log('滑鼠移入');"
+        onmouseout="console.log('滑鼠移出');"
+        onmousemove="console.log('滑鼠移動');"
+    
+    
+    >測試</span>
+
+<br>
+    <span id="practice"
+        onmouseover="over();" onmouseout="out();"
+
+    >練習
+    </span>
+    <br>
+    <span
+    onmouseover="over2(this);" onmouseout="out2(this);"
+    >練習2
+    </span>
+<br>
+    <span 
+        onmouseover="this.style.color='red';"
+        onmouseout="this.style.color='black';"
+        onmousedown="this.style.fontweight='bold';"
+        onmouseup="this.style.fontweight='normal';"
+    
+    >老師的按鈕</span>
+
+
+    <div class="butten" id="divbtn" onmouseover="btn">這是一個按鈕</div>
+</div>
+
+    <script>
+        let practice=document.querySelector("#practice");
+        function over(){
+            practice.style.color='red';
+        }
+        function out(){
+            practice.style.color='black';
+        }
+
+
+        function over2(element){
+            element.style.color='red';
+        }
+        function out2(){
+            element.style.color='black';
+        }
+
+
+        let divbtn=document.querySelector("#divbtn");
+        function runbtn(){
+            divbtn.style.top="1000px";
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .title{
+            font-weight: bold;
+            font-size: 20px;
+            background-color: blanchedalmond;
+        }
+        .nromal{
+            font-weight: bold;
+            font-size: 20px;
+            color:red;
+            background-color: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>search box</h3>
+    <div>
+        <span id="img" class="title" onclick="changeToPage();">圖片</span>
+        <span id="page" class="normal" onclick="changeToImage();">頁面</span>
+    </div>
+    <div class="search_outer">
+        <input type="text">
+        <input id="BTN_search" onclick="change(0);" type="button" value="Page search">
+    </div>
+    <script>
+        let page=document.querySelector("#page");
+        let img=document.querySelector("#img");
+        let BTN_search=document.querySelector("#BTN_search");
+        // function changeToPage(){
+        //     page.className="title";
+        //     img.className="normal";
+        // }
+        // function changeToImage(){
+        //     page.className="normal";
+        //     img.className="title";
+
+        // }
+        function change(index){
+            while(true){
+                if(index==1){
+                page.className="normal";
+                img.className="title";
+                index=0;
+                console.log(index);
+                }else{
+                page.className="title";
+                img.className="normal";
+                index=1;
+                console.log(index);
+
+            }return(index);
+            }
+
+        }
+    </script>
+</body>
+</html>

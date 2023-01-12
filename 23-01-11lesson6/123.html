@@ -12,18 +12,25 @@
             font-weight: bold;
             text-decoration: underline;
         }
+        .disappear{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
     </style>
 </head>
 <body>
 
-    <h3>今天天氣好</h3>
+    <h3 id="ahead" class="123">今天天氣好</h3>
     <div>你好大家好</div>
     <div id="content">天氣不錯</div>
-    <button >顯示</button>
-    <button >隱藏</button>
+    <button onclick="show()" >顯示</button>
+    <button onclick="hide()">隱藏</button>
     <button onclick="change()">點我</button>  <!--在任一指令區塊後直接加上 onclick="" 來呼叫函式執行，但重新整理後還是會回到原本的畫面-->
+    <button onclick="changeImage();">換圖</button>
     <div onclick="image()">
-        <img src="3698.png_300.png" />
+        <img id="img" onclick="changeImage();" src="../img/img/photo-icon.jpg" />
     </div>
     <script>
         
@@ -33,10 +40,13 @@
         }
         
         function hide(){
-            display:block
+            let element=document.querySelector("#ahead");
+            element.className="disappear";
             
         }
         function show(){
+            let element=document.querySelector("#ahead");
+            element.className="show";
             
         }console.log(window)
         
@@ -79,6 +89,13 @@
             element.className="test"
             //設定標籤的個別 CSS 屬性：標籤物件.sytle.CSS屬性="對應的設定值"
             
+        }
+
+
+        function changeImage(){
+            let img=document.querySelector("#img");
+            console.log(img);
+            img.src="../img/img/photo-icon.png";
         }
         
         
