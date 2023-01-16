@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>測試陣列物件</h3>
+    <button onclick="test();">測試</button>
+    班上幾位同學<input type="text" id="grade"/>
+    <button onclick="createList();">列表</button>
+    <script>
+        /*
+        function test(){
+        //陣列物件:按照順序，包裝資料的容器
+            let grades=[];
+            for(let i=0;i<3;i++){
+                grades[i]=parseInt(prompt("輸入學生成績",""));
+            }
+            console.log(grades);
+
+            let total=0;
+            for(let i=0;i<grades.length;i++){
+            // console.log(grades[i]);
+            total=total+grades[i];
+            }
+            let avg=total/grades.length;
+            console.log("平均數",avg);
+        }
+*/
+        // function createList(){
+        //     let list=[];
+        //     for(let x=0;x<=10;x++){
+        //         y=list[x]=Math.random();
+        //         return(y);
+        //     }}
+        //     console.log(list);
+
+
+        function selectGrade(){
+            let grade=document.querySelector("#grade").value;
+            let list=[]
+            for(let i=0;i<3;i++){
+                list[i]=grade;
+            }
+            console.log(list);
+        }
+    </script>
+</body>
+</html>

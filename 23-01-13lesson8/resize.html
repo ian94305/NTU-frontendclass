@@ -50,7 +50,7 @@
         let moveMiddle=function(e){
             console.dir(e.clientY);
             middle.style.left=e.clientX+"px";
-            left.style.width=(e.clientX-2)+"px";
+            left.style.width=e.clientX+"px";
         };
         let drag=function(){
             document.addEventListener("mousemove",moveMiddle);

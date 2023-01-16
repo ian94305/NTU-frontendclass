@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>測試數學物件</h3>
+    <button onclick="test();">測試</button>
+    <h3>測試字串物件</h3>
+    <input type="text" value="hello" id="input"/>
+    <button onclick="check();">檢查</button>
+
+    <script>
+        // ============================字串物件===========================
+
+
+
+
+        function check(){
+            let input=document.querySelector("#input").value;
+
+            let text1="hello"+"world";
+            let text=new String("Hello")+new String("world");
+            console.log(text);
+            console.log(input);
+
+            // 字串過濾
+
+
+
+/*
+            console.log("字串的長度",text.length);
+            console.log("取得第二個字元",text.charAt(1));
+            console.log("全部變大寫",text.toUpperCase());
+            console.log("取得子字串 ell",text.substring(1,4));
+            console.log("搜尋字串中是否包含abc",text.indexOf("abc"));
+            console.log("搜尋字串中是否包含 llo",text.indexOf("llo"));
+  */
+  
+        }
+
+
+
+
+
+
+
+
+
+
+        // =========================數學物件===========================
+        function test(){
+            // Math.random只會產生0-1之間的數
+            // console.log("取亂數",Math.random());
+
+            // 產生學生分數0-100
+            let score=Math.random()*10;
+            console.log(Math.round(score));
+
+            //爆擊率20%
+
+
+            // console.dir(Math);
+            // console.log("圓周率",Math.PI);
+            // console.log("取絕對值",Math.abs(-5));
+            // console.log("四捨五入",Math.round(3.499999));
+            // console.log("無條件進位",Math.ceil(4.00001));
+            // console.log("開根號",Math.sqrt(10));
+            // console.log("三的四次方",Math.pow(3,8));
+        }
+    </script>
+</body>
+</html>

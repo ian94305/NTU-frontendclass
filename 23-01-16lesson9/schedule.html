@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>倒數計時</h3>
+    <div id="timer">3</div>
+    <div id="interval">10</div>
+    <script>
+        let timer=document.querySelector("#timer");
+        let interval=document.querySelector("#interval");
+
+        // // 延遲一段時間僅執行函式一次window.setTimeout(函示,毫秒);
+        // function coutdown(){
+        //     console.log("run");
+        //     timer.innerHTML=timer.innerHTML-1;
+        //     if(timer.innerHTML>0){
+        //         window.setTimeout(coutdown,1000);
+        //     }else{
+        //         window.location.href="http://127.0.0.1:5500/23-01-16lesson9/schedule.html";
+        //     }
+        // }
+        // // 非同步的程式(Asynchronous)
+        // window.setTimeout(coutdown,3000);
+        // console.log("end");
+
+
+        // 延遲一段時間重複執行函式window.setInterval(函示,毫秒);
+        function intervalcount(){
+            console.log("run");
+            interval.innerHTML=interval.innerHTML-1;
+            if(interval.innerHTML<=0){
+                interval.innerHTML="happy newyear";
+                // 清除排程 window.clearInterval(排程編號)
+                window.clearInterval(intervalID);
+                
+            }
+        }
+        // 非同步的程式(Asynchronous)
+        let intervalID=window.setInterval(intervalcount,1000);
+        console.log("end");
+    </script>
+</body>
+</html>
