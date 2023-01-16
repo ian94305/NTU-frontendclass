@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .outer{
+            display: flex;
+            height: 1000px;
+            background-color: antiquewhite;
+        }
+        .left{
+            width:48vw;
+            height: 100vh;
+            background-color: lightblue;
+            position: fixed;
+
+        }
+        .middle{
+            height: 100vh;
+            width: 5px;
+            background-color: gray;
+            position: fixed;
+            left:calc(48vw - 1px) ;
+            cursor: w-resize;
+        }
+        .right{
+            flex: auto;
+            height: 100vh;
+            background-color: lightcoral;
+            position: fixed;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="left" id="left"></div>
+        <div class="middle" id="middle"></div>
+        <div class="right" id="right"></div>
+    </div>
+    <script>
+        let left=document.querySelector("#left");
+        let middle=document.querySelector("#middle");
+        let moveMiddle=function(e){
+            console.dir(e.clientY);
+            middle.style.left=e.clientX+"px";
+            left.style.width=(e.clientX-2)+"px";
+        };
+        let drag=function(){
+            document.addEventListener("mousemove",moveMiddle);
+        };
+        let drop=function(){
+            document.removeEventListener("mousemove",moveMiddle);
+        }
+        document.addEventListener("mousedown",drag);
+        document.addEventListener("mouseup",drop);
+
+    </script>
+</body>
+</html>

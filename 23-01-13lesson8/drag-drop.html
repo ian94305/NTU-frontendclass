@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: fixed;
+            left: 1000px;
+            top:100px;
+            /* flex-direction: column; */
+        }
+        .content{
+            display: flex;
+            width: 100px;
+            height: 80px;
+            margin: 20px 0;
+            background-color: aliceblue;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+        <div></div>
+        <div class="content" id="content"></div>
+    </div>
+
+
+    <script>
+        let box=document.querySelector("#box");
+        let content=document.querySelector("#content");
+        let mousemove=function(e){
+            // console.log(e.clientX,e.clientY);
+            box.style.left=(e.clientX-30)+"px";
+            box.style.top=(e.clientY-10)+"px";
+        };
+        // document.addEventListener("mousemove",mousemove);
+        let drag=function(){
+            document.addEventListener("mousemove",mousemove);
+            // document.removeEventListener("mouseup",mousemove);
+        };
+        let drop=function(){
+            document.removeEventListener("mousemove",mousemove);
+
+        };
+        //當滑鼠移入content(白框)時event drag失效
+        let disable=function(){
+            box.removeEventListener("mousedown",drag);
+            // console.log("移入");
+
+        };
+        //當滑鼠移出content(白框)event drag回復
+        let restart=function(){
+            box.addEventListener("mousedown",drag);
+            // console.log("移出");
+        };
+            // 先觸發失效事件，移出恢復;若於box中&非content的區域點擊可觸發drag event
+            box.addEventListener("mousedown",drag);
+            box.addEventListener("mouseup",drop);
+            content.addEventListener("mouseover",disable);
+            content.addEventListener("mouseout",restart);
+
+
+       
+
+
+
+ 
+
+
+
+    </script>
+</body>
+</html>

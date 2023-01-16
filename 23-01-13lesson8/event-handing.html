@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a{
+            align-self: baseline;
+        }
+    </style>
+</head>
+<body>
+    <h3>使用javascript 做事件處理</h3>
+    <!-- <button onclick="console.log('hello');">點擊</button> -->
+    <button id="btn">點擊</button>
+    <script>
+        // 事件處理的三要素:目標的標籤;事件的標籤;對應的處理函式
+
+        let btn=document.querySelector("#btn");
+        // 標籤物件.addEventListener("事件的名稱",處理函式);
+        let changecolor=function(e){
+            console.log(e);
+            console.log(e.clientX,e.clientY);
+            if(e.altKey){
+                btn.removeEventListener("click",changecolor);
+            }
+
+            // btn.removeEventListener("click",changecolor);
+        }
+        let changecolorover=function(){
+            btn.style.color='red';
+        }
+        let changecolorup=function(){
+            btn.style.color='black';
+        }
+        btn.addEventListener("click",changecolor);
+        btn.addEventListener("mouseover",changecolorover);
+        btn.addEventListener("mouseout",changecolorup);
+        /*
+            1.瀏覽器發現使用者點擊按鈕，觸發點擊事件
+            2.瀏覽器蒐集事件有關的資訊，建立event object(事件物件);
+            3.瀏覽器呼叫事件處理函式，並且將event object透過第一個參數傳入函式中
+        */
+
+
+    </script>
+</body>
+</html>
