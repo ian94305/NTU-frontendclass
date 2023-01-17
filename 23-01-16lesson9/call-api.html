@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>fetch的使用</h3>
+    <button onclick="getData();">取得資料</button>
+    <div id="list"></div>
+    <script>
+
+        function getData(){
+            let src="https://cwpeng.github.io/live-records-samples/data/products.json";
+            fetch(src).then(function(response){
+                return response.json();
+            }).then(function(result){
+            //取得資料，印出來
+            console.log(result);
+            // 呈現在頁面上
+            let list=document.querySelector("#list");
+            for(let i=0;i<result.length;i++){
+                let product=result[i];
+                list.innerHTML+="<div>"+product.name+": "+product.price+"</div>";
+            }
+
+
+            });
+        }
+
+
+
+
+
+
+        //https://cwpeng.github.io/live-records-samples/data/products.json
+
+        /*
+        AJAX:即「Asynchronous JavaScript and XML」
+        XHR:XMLHttpRequest 物件— 跨瀏覽器撈資料. 使用XHR 物件可以在自己網頁上讀取遠端的JSON 資料
+        FETCH:fetch()
+
+
+        使用fetch()連線網址取得json格式的資料
+        fetch("網址").than(function(response){
+            return response.json();
+        }).than(function(result){
+            //取得資料，印出來
+            console.log(result);
+        });
+        */
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>fetch的應用</h3>
+    <script>
+        //json格式的資料:物件和陣列
+        let result={
+            status:0,
+            cursor:{
+                next:"curor to next page",
+                previous:"cursor to previous page"
+            },
+            data:[
+                {
+                    count:3,
+                    grades:[70,50,100]
+                },
+                {
+                    count:2,
+                    grades:[100,50]
+                }
+            ]
+        };
+        console.log(result);
+        console.log(result.cursor.next);
+        console.log(result.data[1].grades[0]);
+
+    </script>
+</body>
+</html>

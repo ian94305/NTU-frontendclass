@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>fetch的使用</h3>
+    <button onclick="getData();">取得資料</button>
+    <div id="list"></div>
+    <!-- 氣象資料平台授權碼:
+    CWB-9694EBC9-0496-4650-9A37-853A6C153F31
+    https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-9694EBC9-0496-4650-9A37-853A6C153F31
+-->
+
+<script>
+    function getData(){
+        let src="https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-9694EBC9-0496-4650-9A37-853A6C153F31";
+        fetch(src).then(function(response){
+            return response.json();
+        }).then(function(result){
+        //取得資料，印出來
+        console.log(result.records.location);
+        console.log(result.records.location[5].weatherElement[2].time[0].parameter.parameterName);
+
+        console.log(result.records.location[5].elementName);
+        // 呈現在頁面上
+        let list=document.querySelector("#list");
+        for(let i=0;i<result.records.location.length;i++){
+            let location=result.records.location[i].locationName;
+            console.log(location);
+            list.innerHTML+="<div>"+location+"</div>";
+        }
+
+
+        });
+    }
+</script>
+
+</body>
+</html>

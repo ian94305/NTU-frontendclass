@@ -9,8 +9,13 @@
 <body>
     <h3>測試陣列物件</h3>
     <button onclick="test();">測試</button>
-    班上幾位同學<input type="text" id="grade"/>
+
     <button onclick="createList();">列表</button>
+    <div class="teacher">
+        班上幾位同學<input type="text" id="grade"/>
+        <button id="submit">輸入</button>
+        <button id="average">平均</button>
+    </div>
     <script>
         /*
         function test(){
@@ -38,15 +43,33 @@
         //     }}
         //     console.log(list);
 
-
+        let submit=document.querySelector("#submit");
+        let average=document.querySelector("#evarage");
         function selectGrade(){
             let grade=document.querySelector("#grade").value;
-            let list=[]
-            for(let i=0;i<3;i++){
+            let list=[];
+            let i=0;
+            if(grade<0){
+                alert("請重新輸入");
+            }else if(grade>100){
+                alert("請重新輸入");
+            }else{
                 list[i]=grade;
-            }
+                i++;
+            };
+            console.log(i);
             console.log(list);
+            // for(let i=0;i<3;i+=1){
+            //     list[i]=grade;
+            //     console.log(list);
+            //     console.log(i);
+            //     break
+            // };
+            // return(i);
+
         }
+
+        submit.addEventListener("mousedown",selectGrade);
     </script>
 </body>
 </html>
